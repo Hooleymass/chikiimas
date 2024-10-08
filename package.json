@@ -1,0 +1,48 @@
+{
+  "name": "tmdb",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
+    "axios": "^1.7.7",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
+    "flixhq-core": "^1.1.1",
+    "framer-motion": "^11.9.0",
+    "lodash.throttle": "^4.1.1",
+    "next": "15.0.0-canary.175",
+    "react": "19.0.0-rc-2d16326d-20240930",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "19.0.0-rc-2d16326d-20240930",
+    "react-icons": "^5.3.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-lazy-load-image-component": "^1.6.2",
+    "react-loading-skeleton": "^3.5.0",
+    "react-player": "^2.16.0",
+    "react-redux": "^9.1.2",
+    "react-select": "^5.8.1",
+    "react-youtube": "^10.1.0",
+    "sass": "^1.79.1",
+    "sass-loader": "^16.0.1",
+    "sharp": "^0.33.5",
+    "tailwind-merge": "^2.5.3",
+    "usehooks-ts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@types/lodash.throttle": "^4.1.9",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.0-canary.175",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

@@ -1,0 +1,126 @@
+@import "../../mixins.scss";
+
+.movieCard {
+    width: 100%;
+    margin-bottom: 25px;
+    cursor: pointer;
+    flex-shrink: 0;
+    max-width: 500px;
+
+    @include md {
+        width: calc(50% - 15px);
+        max-width: 460px;
+    }
+
+    @include lg {
+        width: calc(33.33% - 16px);
+        max-width: 360px;
+    }
+
+    .posterBlock {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        padding: 10px;
+        transition: all ease 0.5s;
+
+        .lazy-load-image-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .circleRating {
+            width: 40px;
+            height: 40px;
+            position: relative;
+            top: 30px;
+            background-color: white;
+            flex-shrink: 0;
+
+            @include md {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        .genres {
+            display: none;
+            position: relative;
+
+            @include md {
+                display: flex;
+                flex-flow: wrap;
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    .details {
+        display: flex;
+        align-items: center; // Align items vertically centered
+        gap: 15px; // Space between icon and text
+
+        &__icon-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        &__icon {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        &__text-block {
+            color: white;
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                font-size: 16px;
+                margin-bottom: 10px;
+                line-height: 24px;
+                @include ellipsis(1); // BMF for text ellipsis
+
+                @include md {
+                    font-size: 20px;
+                }
+            }
+
+            &__date {
+                font-size: 14px;
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &:hover {
+        .posterBlock {
+            opacity: 0.5;
+        }
+    }
+}

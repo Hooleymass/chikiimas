@@ -1,0 +1,206 @@
+@import "../../mixins.scss";
+
+.main {
+  display: flex;
+  flex-direction: column;
+
+  @include md {
+    flex-direction: row;
+  }
+
+  >* {
+    box-sizing: border-box;
+  }
+
+  .watchPage {
+    flex: 0 0 65%;
+  }
+
+  .sidebar {
+    flex: 0 0 35%;
+    margin-top: 40px;
+
+  }
+}
+
+
+.watchPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+
+  .videoContainer {
+    width: 100%;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border: none;
+    }
+  }
+
+  .sidebar {
+    justify-content: center;
+  }
+
+  .infoContainer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .overview {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+  }
+
+  @include md {
+    padding: 20px;
+
+    .videoContainer {
+      margin-bottom: 20px;
+    }
+
+    .infoContainer {
+      padding: 30px;
+
+      .title {
+        font-size: 2.5rem;
+      }
+
+      .overview {
+        font-size: 1.4rem;
+      }
+
+      .sidebar {
+        padding-top: 10px;
+      }
+    }
+  }
+
+  @include lg {
+    .videoContainer {
+      margin-bottom: 20px;
+    }
+
+    .infoContainer {
+      padding: 10px;
+
+      .title {
+        font-size: 3rem;
+      }
+
+      .overview {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+.season-container {
+  margin: 20px 0;
+
+  .season__episodes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    .season__episode {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50%;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #555;
+      }
+
+      &.current {
+        background-color: #e50914; // Netflix-like red color for current episode
+      }
+    }
+  }
+
+  .season__overview {
+    background-color: #222;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    line-height: 1.6;
+  }
+}
+
+// Variables for light/dark themes
+$light-bg: white;
+$light-text: black;
+$light-hover-bg: #e2e8f0;
+$light-active-bg: #cbd5e0;
+
+$dark-bg: black;
+$dark-text: white;
+$dark-hover-bg: #2d3748;
+$dark-active-bg: #4a5568;
+
+$active-bg: gray;
+$active-text: white;
+
+
+// styles.scss
+
+.seasonsList {
+  &__button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    background-color: $light-bg;
+    color: $light-text;
+    gap: 4px;
+
+    &:hover {
+      background-color: $light-hover-bg;
+    }
+
+    &:active {
+      background-color: $light-active-bg;
+    }
+
+    // Dark mode styles
+    @media (prefers-color-scheme: dark) {
+      background-color: $dark-bg;
+      color: $dark-text;
+
+      &:hover {
+        background-color: $dark-hover-bg;
+      }
+
+      &:active {
+        background-color: $dark-active-bg;
+      }
+    }
+
+    &--active {
+      cursor: not-allowed;
+      background-color: $active-bg;
+      color: $active-text;
+    }
+  }
+}

@@ -1,0 +1,378 @@
+.person {
+    padding: 20px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ccc;
+
+        &__image {
+            width: 150px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        &__name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        &__biography {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        &__details {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &__detail {
+                display: flex;
+                gap: 5px;
+
+                &__label {
+                    font-weight: bold;
+                    color: #444;
+                }
+
+                &__value {
+                    color: #666;
+                }
+            }
+
+            &__aliases {
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+
+                &__aliasList {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 5px;
+                }
+
+                &__alias {
+                    background-color: #f0f0f0;
+                    color: #333;
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    font-size: 0.875rem;
+                }
+            }
+        }
+    }
+
+    &__knownFor {
+        margin-top: 40px;
+
+        &__title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        &__list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 150px;
+            text-align: center;
+
+            &__image {
+                width: 100%;
+                height: 225px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            &__title {
+                font-size: 1rem;
+                color: #fff;
+                margin-top: 10px;
+            }
+
+            &__character {
+                font-size: 0.875rem;
+                color: #aaa;
+            }
+        }
+    }
+
+    &__section {
+        margin-top: 40px;
+
+        &__title {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        &__list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 150px;
+            text-align: center;
+
+            &__image {
+                width: 100%;
+                height: 225px;
+                object-fit: cover;
+                border-radius: 8px;
+            }
+
+            &__title {
+                font-size: 1rem;
+                color: #fff;
+                margin-top: 10px;
+            }
+
+            &__character {
+                font-size: 0.875rem;
+                color: #aaa;
+            }
+        }
+    }
+}
+
+// Skeleton styles
+.skeleton {
+    &__header {
+        height: 200px;
+        width: 100%;
+        background-color: #444;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    &__section {
+        height: 250px;
+        width: 100%;
+        background-color: #444;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+}
+
+/* .person {
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &__image {
+            width: 150px;
+            height: 225px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        &__info {
+            margin-left: 20px;
+        }
+
+        &__name {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        &__department {
+            font-size: 1.2rem;
+            color: #777;
+        }
+    }
+
+    &__bio {
+        margin-bottom: 30px;
+
+        &__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        &__text {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        &__details {
+            p {
+                margin-bottom: 5px;
+            }
+        }
+
+        &__imdb {
+            color: #f5c518;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+    }
+
+    &__knownFor {
+        &__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        &__list {
+            display: flex;
+            gap: 15px;
+
+            &__item {
+                width: 150px;
+
+                &__image {
+                    width: 100%;
+                    height: 225px;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+
+                &__title {
+                    margin-top: 5px;
+                    text-align: center;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    &__section {
+        margin-bottom: 30px;
+    
+        &__empty {
+          color: #999;
+          font-size: 1rem;
+          margin-top: 10px;
+        }
+      }
+
+    &__sort {
+        margin-bottom: 20px;
+
+        button {
+            margin-right: 10px;
+            padding: 10px 15px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #555;
+            }
+        }
+    }
+
+    &__section {
+        margin-bottom: 30px;
+
+        &__title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        &__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        &__item {
+            flex-basis: 30%;
+            background-color: #222;
+            padding: 15px;
+            border-radius: 10px;
+
+            &__title {
+                font-size: 1rem;
+                margin-bottom: 5px;
+                color: #fff;
+            }
+
+            &__date {
+                color: #aaa;
+            }
+        }
+    }
+}
+
+.skeleton {
+    &__header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+
+        &__image {
+            width: 150px;
+            height: 225px;
+            background: #ccc;
+            border-radius: 10px;
+        }
+
+        &__info {
+            margin-left: 20px;
+
+            &__name,
+            &__department {
+                height: 20px;
+                background: #ddd;
+                margin-bottom: 10px;
+            }
+
+            &__name {
+                width: 200px;
+            }
+
+            &__department {
+                width: 150px;
+            }
+        }
+    }
+
+    &__bio {
+
+        &__title,
+        &__text,
+        &__details {
+            background: #ddd;
+            height: 20px;
+            margin-bottom: 10px;
+        }
+
+        &__title {
+            width: 100px;
+        }
+
+        &__text {
+            width: 100%;
+        }
+
+        &__details {
+            width: 200px;
+        }
+    }
+
+    &__section {
+        height: 200px;
+        background: #ddd;
+        border-radius: 10px;
+    }
+} */
