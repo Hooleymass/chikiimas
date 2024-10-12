@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import "./style.scss";
 import { useRouter } from 'next/navigation';
 import useFetch from '@/hooks/useFetch';
@@ -10,37 +10,39 @@ const HeroBanner = () => {
   const [background, setBackground] = useState("");
   const [query, setQuery] = useState("");
   const navigate = useRouter();
-  const {url} = useSelector((state)=> state.home)
+  const { url } = useSelector((state) => state.home)
 
-  const {data,loading} = useFetch("/movie/upcoming");
+  const { data, loading } = useFetch("/movie/upcoming");
 
-  useEffect(()=>{
+  useEffect(() => {
     const bg = url.backdrop + data?.results?.[Math.floor(Math.random() * 20)]?.backdrop_path
     setBackground(bg)
-  },[data])
+  }, [data])
 
-  const searchQueryHandler = (event)=>{
+  const searchQueryHandler = (event) => {
     //if user type search query and press enter, and search query not empty, then api call
-    if(event.key === 'Enter' && query.length >0 ){
-        navigate.push(`/search/${query}`)
+    if (event.key === 'Enter' && query.length > 0) {
+      navigate.push(`/search/${query}`)
     }
   }
 
-  const searchItem = () =>{
+  const searchItem = () => {
     navigate.push(`/search/${query}`)
   }
 
   return (
-      <div className="heroBanner">
-        {!loading && <div className="backdrop-img">
-          <Img src={background}/>
-        </div>}
+    <div className="heroBanner">
+      {!loading && <div className="backdrop-img">
+        <Img src={background} />
+      </div>}
+      <div className="opacity-layer-top">
+        
+      </div>
+      <div className="opacity-layer">
 
-        <div className="opacity-layer">
-          
-        </div>
+      </div>
 
-        <ContentWrapper>
+      {/*         <ContentWrapper>
         <div className="wrapper">
           <div className="heroBannerContent">
             <span className="title">Welcome</span>
@@ -51,9 +53,9 @@ const HeroBanner = () => {
             </div>
           </div>
         </div>
-        </ContentWrapper>
-        
-      </div>
+        </ContentWrapper> */}
+
+    </div>
   )
 }
 

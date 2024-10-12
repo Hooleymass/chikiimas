@@ -8,7 +8,6 @@ import { useRouter } from "next/navigation";
 import "./style.scss";
 
 import ContentWrapper from "../contentWrapper/ContentWrapper";
-import logo from "../../assets/cinemx.png";
 
 const Header = () => {
   //states creating
@@ -78,7 +77,8 @@ const Header = () => {
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
           <ContentWrapper>
             <div className="logo" onClick={()=> navigate.push("/")}>
-              <img src={logo} alt="" />
+              {/* <img src={"/assets/cinemx.png"} alt="chikiimass logo" title="chikiimass" /> */}
+              Chikiimass
             </div>
             <ul className="menuItems">
               <li className="menuItem" onClick={()=>{navigationHandler("movie")}}>Movies</li>

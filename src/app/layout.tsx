@@ -4,7 +4,7 @@ import "./globals.css";
 import './index.scss'
 import { Providers } from "./providers";
 import AppWrapper from "./AppWrapper";
-import Header from "@/components/Header";
+import Header from "@/components/header/Header";
 import SideBar from "@/components/SideBar";
 import ScrollToTop from "@/components/ScrollToTop";
 
