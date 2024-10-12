@@ -7,6 +7,7 @@ import Spinner from "../../../components/spinner/Spinner";
 import Season from "./season";
 import Similar from "./Similar";
 import Link from "next/link";
+import Native from "@/components/Ads/Banner/Native";
 
 const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
   const [embedUrl, setEmbedUrl] = useState("");
@@ -49,14 +50,14 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
 
   const renderSeasons = () => {
     if (!data?.number_of_seasons) return null;
-  
+
     return (
       <div className="seasonsList">
         {Array.from({ length: data.number_of_seasons }, (_, index) => {
           const seasonNumber = index + 1;
           const isActive = seasonNumber === season;
           const href = `/watch/${mediaType}/${id}/${seasonNumber}/1`;
-  
+
           return isActive ? (
             <button
               key={seasonNumber}
@@ -79,7 +80,7 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
       </div>
     );
   };
-  
+
 
 
   return (
@@ -94,7 +95,7 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
             className="videoFrame"
           ></iframe>
         </div>
-
+        <Native />
         <div className="infoContainer">
           <h1 className="title">{data?.title || data?.name}</h1>
           {mediaType !== 'tv' && <p className="overview">{data?.overview}</p>}

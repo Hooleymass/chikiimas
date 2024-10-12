@@ -1,9 +1,11 @@
+'use client'
 import React, { useState, useEffect } from 'react';
 import "./style.scss";
 import { useRouter } from 'next/navigation';
 import useFetch from '@/hooks/useFetch';
 import { useSelector } from 'react-redux';
 import Img from '@/components/lazyLoadImage/img';
+import Footer from '@/components/footer/Footer'
 import ContentWrapper from '@/components/contentWrapper/ContentWrapper';
 
 const HeroBanner = () => {
@@ -40,6 +42,9 @@ const HeroBanner = () => {
       </div>
       <div className="opacity-layer">
 
+      </div>
+      <div className='content'>
+        <Footer />
       </div>
 
       {/*         <ContentWrapper>

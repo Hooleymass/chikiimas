@@ -29,8 +29,13 @@
     }
     .logo {
         cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        font: bold;
+        font-size: large;
         img {
-            height: 80px;
+            height: 50px;
         }
     }
     .menuItems {

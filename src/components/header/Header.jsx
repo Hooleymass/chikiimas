@@ -21,7 +21,7 @@ const Header = () => {
     //all new pages start showing top
     useEffect(()=>{
       window.scrollTo(0,0);
-    },[router])
+    },[navigate])
 
     const controlNavBar = () =>{
         if(window.scrollY > 200){
@@ -77,7 +77,7 @@ const Header = () => {
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
           <ContentWrapper>
             <div className="logo" onClick={()=> navigate.push("/")}>
-              {/* <img src={"/assets/cinemx.png"} alt="chikiimass logo" title="chikiimass" /> */}
+              <img src={"/icon.png"} alt="chikiimass logo" title="chikiimass" />
               Chikiimass
             </div>
             <ul className="menuItems">
