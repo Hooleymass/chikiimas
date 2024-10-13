@@ -9,6 +9,7 @@ import SideBar from "@/components/SideBar";
 import ScrollToTop from "@/components/ScrollToTop";
 import HeroBanner from "./home/heroBanner/HeroBanner";
 import SocialBar from "@/components/Ads/Social";
+import DirectLink from "./DirectLink";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <AppWrapper>
             <SideBar />
             <SocialBar />
+            <DirectLink />
             <Header />
             <ScrollToTop>
               {children}
