@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { m } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
 import { Poster } from "@/common";
 import { useGlobalContext } from "@/context/globalContext";
@@ -8,10 +7,11 @@ import { mainHeading, maxWidth, paragraph, watchBtn } from "@/styles";
 import { IMovie } from "@/types";
 import { cn } from "@/utils/helper";
 import { useMotion } from "@/hooks/useMotion";
+import { useRouter } from 'next/navigation';
 
 const HeroSlide = ({ movie }: { movie: IMovie }) => {
   const { getTrailerId, setIsModalOpen } = useGlobalContext();
-  const navigate = useNavigate();
+  const navigate = useRouter();
   const { fadeDown, staggerContainer } = useMotion();
 
   const {
@@ -27,7 +27,7 @@ const HeroSlide = ({ movie }: { movie: IMovie }) => {
   };
 
   const handleWatchNow = () => {
-    navigate(`/movie/${id}`);
+    navigate.push(`/movie/${id}`);
   };
 
   return (
