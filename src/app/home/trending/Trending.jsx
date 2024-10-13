@@ -16,7 +16,7 @@ const onTabChange = (tab) =>{
 }
 
   return (
-    <div className='carouselSection'>
+    <div className='carouselSection pt-16'>
         <ContentWrapper>
             <span className="carouselTitle">Trending</span>
             <SwitchTabs data={["Day","Week"]} onTabChange={onTabChange}/>

@@ -8,7 +8,7 @@ export default function SocialBar(): JSX.Element {
     if (social.current && !social.current.firstChild) {
       const script = document.createElement('script')
       script.type = 'text/javascript'
-      script.src = '//wipehumorousbeen.com/6c/29/9f/6c299f2063b8dcfde46b08fbccd13054.js'
+      script.src = '//wipehumorousbeen.com/54/a9/ea/54a9ea0778f5620c72be5bd12e2f00f1.js'
 
       social.current.appendChild(script)
     }

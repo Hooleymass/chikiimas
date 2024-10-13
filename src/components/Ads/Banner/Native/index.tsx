@@ -10,11 +10,11 @@ export default function Native(): JSX.Element {
       script.async = true
       script.setAttribute('data-cfasync', 'false')
       script.type = 'text/javascript'
-      script.src = '//wipehumorousbeen.com/322b18aba52e61dde81eddcb13b509bb/invoke.js'
+      script.src = '//wipehumorousbeen.com/2ff431c6276653ff2882d567b9a5e598/invoke.js'
 
       native.current.appendChild(script)
     }
   }, [])
 
-  return <div id="container-322b18aba52e61dde81eddcb13b509bb" ref={native}></div>
+  return <div id="container-2ff431c6276653ff2882d567b9a5e598" ref={native}></div>
 }

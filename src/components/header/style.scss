@@ -30,10 +30,9 @@
     .logo {
         cursor: pointer;
         display: flex;
-        flex-direction: row;
-        justify-items: center;
-        font: bold;
-        font-size: large;
+        align-items: center; /* Align items vertically */
+        font-weight: bold; /* Use font-weight for bold */
+        font-size: 24px; /* Set a specific font size */
         img {
             height: 50px;
         }
