@@ -134,16 +134,18 @@ const DetailsBanner = ({ video, crew, seasons }) => {
                                             </div>
                                         )}
                                         {/*Number of Seasons And Episodes*/}
-                                        <div >
-                                            <div className='info'>
-                                                <span className="text bold">Seasons:</span>
-                                                <span className="text">{seasons?.number_of_seasons}</span>
+                                        {mediaType !== "movie" && (
+                                            <div >
+                                                <div className='info'>
+                                                    <span className="text bold">Seasons:</span>
+                                                    <span className="text">{seasons?.number_of_seasons}</span>
+                                                </div>
+                                                <div className='info'>
+                                                    <span className="text bold">Episodes:</span>
+                                                    <span className="text">{seasons?.number_of_episodes}</span>
+                                                </div>
                                             </div>
-                                            <div className='info'>
-                                                <span className="text bold">Episodes:</span>
-                                                <span className="text">{seasons?.number_of_episodes}</span>
-                                            </div>
-                                        </div>
+                                        )}
 
                                     </div>
                                 </div>

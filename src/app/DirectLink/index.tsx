@@ -35,7 +35,7 @@ const DirectLink: React.FC = () => {
         rel="noopener noreferrer"
         className={styles.overlay__invisibleLink}
       >
-        {/* Empty anchor, entire div is clickable */}
+        
       </a>
     </div>
   );
