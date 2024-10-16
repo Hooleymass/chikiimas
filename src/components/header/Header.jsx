@@ -83,8 +83,8 @@ const Header = () => {
             <ul className="menuItems">
               <li className="menuItem" onClick={()=>{navigationHandler("movie")}}>Movies</li>
               <li className="menuItem" onClick={()=>{navigationHandler("tv")}}>TV Shows</li>
-              <li className="menuItem" onClick={()=>{navigationHandler("anime")}}>Anime</li>
-              <li className="menuItem" onClick={()=>{navigationHandler("manga")}}>Manga</li>
+              <li className="menuItem" onClick={()=>{navigate.push("/anime")}}>Anime</li>
+              <li className="menuItem" onClick={()=>{navigate.push("/manga")}}>Manga</li>
               <li className="menuItem">
                 <HiOutlineSearch onClick={openSearch}/>
               </li>
