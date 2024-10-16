@@ -1,12 +1,12 @@
 import React from 'react'
 import Recommendation from './Recommendations'
-import Banner from '@/components/Ads/Banner'
+import Native from "@/components/Ads/Banner/Native";
 
 const sidebar = ({ mediaType, id }) => {
   return (
     <div>
-      <h1>Related</h1>
-      <Banner adKey='b2f03a02ed04a36818f1f04eb3e333b9' height={90} width={728} />
+      <h1 className='font-bold text-xl mb-4'>Related</h1>
+      <Native />
       <Recommendation mediaType={mediaType} id={id} />
     </div>
   )

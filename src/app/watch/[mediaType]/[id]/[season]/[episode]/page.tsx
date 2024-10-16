@@ -10,7 +10,7 @@ const Watch = async ({ params }: { params: any }) => {
   const { mediaType, id, season, episode } = await params;
 
   return (
-    <div className='main'>
+    <div className='main overflow-x-hidden'>
       <div className='watchPage'>
         <WatchPage
           mediaType={mediaType}

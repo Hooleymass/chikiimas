@@ -4,12 +4,11 @@ import Sidebar from '../../components/sidebar';
 import '../../watch.scss';
 import { redirect } from 'next/navigation'
 import { revalidatePath } from 'next/cache'
-import useFetch from '@/hooks/useFetch';
-import { useSelector } from 'react-redux';
+
 import { fetchMediaDetails } from '../useFetch.client';
 
-const Watch = ({ params }: { params: any }) => {
-  const { mediaType, id } = params;
+const Watch = async ({ params }: { params: any }) => {
+  const { mediaType, id } = await params;
 
   if (mediaType === 'tv') {
     revalidatePath(`/watch/${mediaType}/${id}`);
@@ -18,7 +17,7 @@ const Watch = ({ params }: { params: any }) => {
 
 
   return (
-    <div className='main'>
+    <div className='main overflow-x-hidden'>
       <div className='watchPage'>
         <WatchPage
           mediaType={mediaType}

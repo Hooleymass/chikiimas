@@ -7,7 +7,7 @@ import Spinner from "../../../components/spinner/Spinner";
 import Season from "./season";
 import Similar from "./Similar";
 import Link from "next/link";
-import Native from "@/components/Ads/Banner/Native";
+import Banner from '@/components/Ads/Banner'
 
 const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
   const [embedUrl, setEmbedUrl] = useState("");
@@ -95,7 +95,9 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
             className="videoFrame"
           ></iframe>
         </div>
-        <Native />
+        <section className="overflow-x-scroll">
+          <Banner adKey='b2f03a02ed04a36818f1f04eb3e333b9' height={90} width={728} />
+        </section>
         <div className="infoContainer">
           <h1 className="title">{data?.title || data?.name}</h1>
           {mediaType !== 'tv' && <p className="overview">{data?.overview}</p>}
