@@ -10,6 +10,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import HeroBanner from "./home/heroBanner/HeroBanner";
 import SocialBar from "@/components/Ads/Social";
 import DirectLink from "./DirectLink";
+import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,11 +42,13 @@ export default function RootLayout({
         <Providers>
           <AppWrapper>
             <SideBar />
+            <Analytics />
             <SocialBar />
             <DirectLink />
             <Header />
             <ScrollToTop>
               {children}
+              <SpeedInsights />
             </ScrollToTop>
             <HeroBanner />
           </AppWrapper>
