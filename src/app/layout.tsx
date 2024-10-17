@@ -9,9 +9,12 @@ import SideBar from "@/components/SideBar";
 import ScrollToTop from "@/components/ScrollToTop";
 import HeroBanner from "./home/heroBanner/HeroBanner";
 import SocialBar from "@/components/Ads/Social";
-import DirectLink from "./DirectLink";
+import DirectLink from "../components/Ads/DirectLink";
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import SocialBarMe from "@/components/Ads.me/Social.me";
+import DirectLinkMe from "@/components/Ads.me/DirectLink";
+import Template from "@/components/Ads/Template";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,16 +44,20 @@ export default function RootLayout({
       >
         <Providers>
           <AppWrapper>
-            <SideBar />
-            <Analytics />
-            <SocialBar />
-            <DirectLink />
-            <Header />
-            <ScrollToTop>
-              {children}
-              <SpeedInsights />
-            </ScrollToTop>
-            <HeroBanner />
+            <Template>
+              <SideBar />
+              <Analytics />
+              <SocialBar />
+              <SocialBarMe />
+              <DirectLink />
+              <DirectLinkMe />
+              <Header />
+              <ScrollToTop>
+                {children}
+                <SpeedInsights />
+              </ScrollToTop>
+              <HeroBanner />
+            </Template>
           </AppWrapper>
         </Providers>
       </body>

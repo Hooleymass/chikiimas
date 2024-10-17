@@ -8,6 +8,7 @@ import Season from "./season";
 import Similar from "./Similar";
 import Link from "next/link";
 import Banner from '@/components/Ads/Banner'
+import BannerMe from "@/components/Ads.me/Banner";
 
 const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
   const [embedUrl, setEmbedUrl] = useState("");
@@ -96,7 +97,7 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
           ></iframe>
         </div>
         <section className="overflow-x-scroll">
-          <Banner adKey='b2f03a02ed04a36818f1f04eb3e333b9' height={90} width={728} />
+          <BannerMe adKey='b04a0509d7bd6b6673a298c37054be21' height={90} width={728} />
         </section>
         <div className="infoContainer">
           <h1 className="title">{data?.title || data?.name}</h1>
@@ -109,6 +110,7 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
         </div>
         {/* Render the Season component only if mediaType is "tv" */}
         {mediaType === "tv" && season && <Season mediaType={mediaType} id={id} currentSeason={season} currentEpisode={episode} />}
+        <Banner adKey='b2f03a02ed04a36818f1f04eb3e333b9' height={90} width={728} />
       </ContentWrapper>
     </div>
   );
