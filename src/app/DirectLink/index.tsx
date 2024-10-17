@@ -12,7 +12,7 @@ const DirectLink: React.FC = () => {
     if (!isVisible) {
       timer = setTimeout(() => {
         setIsVisible(true);
-      }, 30000); // 5 minutes
+      }, 60000); // 5 minutes
     }
 
     return () => {

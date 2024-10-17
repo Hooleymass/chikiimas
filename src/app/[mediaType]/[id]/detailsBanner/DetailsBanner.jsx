@@ -13,6 +13,7 @@ import CircleRating from "@/components/circleRating/CircleRating";
 import Img from "@/components/lazyLoadImage/img";
 import { PlayIcon } from "../Playbtn";
 import VideoPopup from "@/components/videoPopup/VideoPopup";
+import Link from "next/link";
 
 const DetailsBanner = ({ video, crew, seasons }) => {
 
@@ -55,6 +56,11 @@ const DetailsBanner = ({ video, crew, seasons }) => {
                                         ) : (
                                             <Img className="posterImg" src={"/assets/no-poster.png"} />
                                         )}
+                                        <section className="playIcon">
+                                            <Link href={`/watch/${mediaType + "/" + data.id}`}>
+                                            <PlayIcon />
+                                            </Link>
+                                        </section>
                                     </div>
                                     <div className="right">
                                         <div className="title">
