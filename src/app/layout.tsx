@@ -49,7 +49,6 @@ export default function RootLayout({
               <Analytics />
               <SocialBar />
               <SocialBarMe />
-              <DirectLink />
               <DirectLinkMe />
               <Header />
               <ScrollToTop>
