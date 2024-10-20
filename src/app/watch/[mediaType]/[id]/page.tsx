@@ -9,6 +9,9 @@ import { fetchMediaDetails } from '../useFetch.client';
 
 const Watch = async ({ params }: { params: any }) => {
   const { mediaType, id } = await params;
+  // fetch labguage using axios from /api/language response e.g. { language: 'en-US'}
+  // const { language } = await fetch('/api/language').then(res => res.json());
+
 
   if (mediaType === 'tv') {
     revalidatePath(`/watch/${mediaType}/${id}`);
@@ -41,9 +44,9 @@ export async function generateMetadata({ params }: { params: any }) {
   if (mediaType !== "movie") {
     return;
   }
-
+  let language='en-US'
   // Fetch movie details for dynamic metadata
-  const data = await fetchMediaDetails(mediaType, id);
+  const data = await fetchMediaDetails(mediaType, id, language );
 
   const title = data?.title || "Movie";
   const description = data?.overview || `Watch the latest movie ${title} online. Stream now and enjoy exclusive content.`;
