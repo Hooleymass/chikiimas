@@ -3,50 +3,68 @@
 
     &__header {
         display: flex;
+        flex-direction: column;
         align-items: center;
         gap: 20px;
         padding-bottom: 20px;
         border-bottom: 1px solid #ccc;
 
+        @media (min-width: 768px) {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
         &__image {
-            width: 150px;
-            height: 200px;
+            width: 100%;
+            max-width: 150px;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
+
+            @media (min-width: 768px) {
+                height: 200px;
+            }
         }
 
         &__name {
-            font-size: 2rem;
+            font-size: 1.5rem;
             font-weight: bold;
             margin-bottom: 10px;
             color: #333;
+
+            @media (min-width: 768px) {
+                font-size: 2rem;
+            }
         }
 
         &__biography {
-            font-size: 1rem;
+            font-size: 0.875rem;
             line-height: 1.6;
             color: #666;
             margin-bottom: 20px;
-            max-width: 600px;
+            max-width: 100%;
+            text-align: center;
+
+            @media (min-width: 768px) {
+                font-size: 1rem;
+                max-width: 600px;
+                text-align: left;
+            }
         }
 
         &__details {
             display: flex;
             flex-direction: column;
             gap: 10px;
+            align-items: center;
+
+            @media (min-width: 768px) {
+                align-items: flex-start;
+            }
 
             &__detail {
                 display: flex;
                 gap: 5px;
-
-                &__label {
-                    font-weight: bold;
-                    color: #444;
-                }
-
-                &__value {
-                    color: #666;
-                }
             }
 
             &__aliases {
@@ -65,86 +83,79 @@
                     color: #333;
                     padding: 5px 10px;
                     border-radius: 5px;
-                    font-size: 0.875rem;
+                    font-size: 0.75rem;
+
+                    @media (min-width: 768px) {
+                        font-size: 0.875rem;
+                    }
                 }
             }
         }
     }
 
-    &__knownFor {
-        margin-top: 40px;
-
-        &__title {
-            font-size: 1.5rem;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        &__list {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        &__item {
-            width: 150px;
-            text-align: center;
-
-            &__image {
-                width: 100%;
-                height: 225px;
-                object-fit: cover;
-                border-radius: 8px;
-            }
-
-            &__title {
-                font-size: 1rem;
-                color: #fff;
-                margin-top: 10px;
-            }
-
-            &__character {
-                font-size: 0.875rem;
-                color: #aaa;
-            }
-        }
-    }
-
+    &__knownFor,
     &__section {
         margin-top: 40px;
 
         &__title {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: #fff;
             margin-bottom: 10px;
+
+            @media (min-width: 768px) {
+                font-size: 1.5rem;
+            }
         }
 
         &__list {
             display: flex;
-            gap: 20px;
+            gap: 10px;
             flex-wrap: wrap;
+            justify-content: center;
+
+            @media (min-width: 768px) {
+                gap: 20px;
+                justify-content: flex-start;
+            }
         }
 
         &__item {
-            width: 150px;
+            width: 100%;
+            max-width: 150px;
             text-align: center;
+
+            @media (min-width: 768px) {
+                width: 150px;
+            }
 
             &__image {
                 width: 100%;
-                height: 225px;
+                height: 200px;
                 object-fit: cover;
                 border-radius: 8px;
+
+                @media (min-width: 768px) {
+                    height: 225px;
+                }
             }
 
             &__title {
-                font-size: 1rem;
+                font-size: 0.875rem;
                 color: #fff;
                 margin-top: 10px;
+
+                @media (min-width: 768px) {
+                    font-size: 1rem;
+                }
             }
 
             &__character {
-                font-size: 0.875rem;
+                font-size: 0.75rem;
                 color: #aaa;
+
+                @media (min-width: 768px) {
+                    font-size: 0.875rem;
+                }
             }
         }
     }
@@ -152,22 +163,32 @@
 
 // Skeleton styles
 .skeleton {
-    &__header {
-        height: 200px;
-        width: 100%;
-        background-color: #444;
-        border-radius: 8px;
-        margin-bottom: 20px;
-    }
 
+    &__header,
     &__section {
-        height: 250px;
         width: 100%;
         background-color: #444;
         border-radius: 8px;
         margin-bottom: 20px;
+
+        &__header {
+            height: 150px;
+
+            @media (min-width: 768px) {
+                height: 200px;
+            }
+        }
+
+        &__section {
+            height: 200px;
+
+            @media (min-width: 768px) {
+                height: 250px;
+            }
+        }
     }
 }
+
 
 /* .person {
     &__header {

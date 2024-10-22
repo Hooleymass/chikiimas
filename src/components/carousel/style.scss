@@ -58,7 +58,10 @@
         }
 
         .skeletonItem {
-            width: 125px;
+            width: 422px;
+            max-width: 500px;
+            max-height: 300px;
+            height: 222px;
 
             @include md {
                 width: calc(50% - 15px);
