@@ -1,11 +1,11 @@
-@import "../../mixins.scss";
+@use "../../mixins.scss";
 
 .main {
   display: flex;
   flex-direction: column;
   padding-top: 30px;
 
-  @include md {
+  @include mixins.md {
     flex-direction: row;
   }
 
@@ -65,7 +65,7 @@
     }
   }
 
-  @include md {
+  @include mixins.md {
     padding: 20px;
 
     .videoContainer {
@@ -89,7 +89,7 @@
     }
   }
 
-  @include lg {
+  @include mixins.lg {
     .videoContainer {
       margin-bottom: 20px;
     }

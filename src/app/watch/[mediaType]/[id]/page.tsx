@@ -46,7 +46,7 @@ export async function generateMetadata({ params }: { params: any }) {
   }
   let language='en-US'
   // Fetch movie details for dynamic metadata
-  const data = await fetchMediaDetails(mediaType, id, language );
+  const data = await fetchMediaDetails(mediaType, id );
 
   const title = data?.title || "Movie";
   const description = data?.overview || `Watch the latest movie ${title} online. Stream now and enjoy exclusive content.`;

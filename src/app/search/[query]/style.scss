@@ -1,4 +1,4 @@
-@import "../../../mixins.scss";
+@use "../../../mixins.scss";
 .searchResultsPage {
     min-height: 700px;
     padding-top: 100px;
@@ -17,7 +17,7 @@
         flex-flow: row wrap;
         gap: 10px;
         margin-bottom: 50px;
-        @include md {
+        @include mixins.md {
             gap: 20px;
         }
         .movieCard {

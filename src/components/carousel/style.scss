@@ -1,4 +1,4 @@
-@import "../../mixins.scss";
+@use "../../mixins.scss";
 
 .carousel {
     margin-bottom: 50px;
@@ -25,7 +25,7 @@
         z-index: 1;
         display: none;
 
-        @include md {
+        @include mixins.md {
             display: block;
         }
 
@@ -50,7 +50,7 @@
         margin-left: -20px;
         padding: 0 20px;
 
-        @include md {
+        @include mixins.md {
             gap: 20px;
             overflow: hidden;
             margin: 0;
@@ -63,11 +63,11 @@
             max-height: 300px;
             height: 222px;
 
-            @include md {
+            @include mixins.md {
                 width: calc(50% - 15px);
             }
 
-            @include lg {
+            @include mixins.lg {
                 width: calc(33.33% - 16px);
             }
 
@@ -106,7 +106,7 @@
         margin-left: -20px;
         padding: 0 20px;
 
-        @include md {
+        @include mixins.md {
             gap: 20px;
             overflow: hidden;
             margin: 0;
@@ -117,11 +117,11 @@
             width: 500px;
             cursor: pointer;
 
-            @include md {
+            @include mixins.md {
                 width: calc(50% - 15px);
             }
 
-            @include lg {
+            @include mixins.lg {
                 width: calc(33.33% - 16px);
             }
 
@@ -164,7 +164,7 @@
                     background-color: white;
                     flex-shrink: 0;
 
-                    @include md {
+                    @include mixins.md {
                         width: 50px;
                         height: 50px;
                     }
@@ -174,7 +174,7 @@
                     display: none;
                     position: relative;
 
-                    @include md {
+                    @include mixins.md {
                         display: flex;
                         flex-flow: wrap;
                         justify-content: flex-end;
@@ -213,9 +213,9 @@
                         font-size: 16px;
                         margin-bottom: 10px;
                         line-height: 24px;
-                        @include ellipsis(1); // BMF for text ellipsis
+                        @include mixins.ellipsis(1); // BMF for text ellipsis
 
-                        @include md {
+                        @include mixins.md {
                             font-size: 20px;
                         }
                     }

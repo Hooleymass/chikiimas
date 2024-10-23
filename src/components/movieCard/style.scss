@@ -1,4 +1,4 @@
-@import "../../mixins.scss";
+@use "../../mixins.scss";
 
 .movieCard {
     width: 100%;
@@ -7,12 +7,12 @@
     flex-shrink: 0;
     max-width: 500px;
 
-    @include md {
+    @include mixins.md {
         width: calc(50% - 15px);
         max-width: 460px;
     }
 
-    @include lg {
+    @include mixins.lg {
         width: calc(33.33% - 16px);
         max-width: 360px;
     }
@@ -55,7 +55,7 @@
             background-color: white;
             flex-shrink: 0;
 
-            @include md {
+            @include mixins.md {
                 width: 50px;
                 height: 50px;
             }
@@ -65,7 +65,7 @@
             display: none;
             position: relative;
 
-            @include md {
+            @include mixins.md {
                 display: flex;
                 flex-flow: wrap;
                 justify-content: flex-end;
@@ -104,9 +104,9 @@
                 font-size: 16px;
                 margin-bottom: 10px;
                 line-height: 24px;
-                @include ellipsis(1); // BMF for text ellipsis
+                @include mixins.ellipsis(1); // BMF for text ellipsis
 
-                @include md {
+                @include mixins.md {
                     font-size: 20px;
                 }
             }

@@ -1,4 +1,4 @@
-@import "../../mixins.scss";
+@use "../../mixins.scss";
 
 .explorePage {
     min-height: 700px;
@@ -12,7 +12,7 @@
         justify-content: space-between;
         margin-bottom: 25px;
         flex-direction: column;
-        @include md {
+        @include mixins.md {
             flex-direction: row;
         }
     }
@@ -21,7 +21,7 @@
         line-height: 34px;
         color: white;
         margin-bottom: 20px;
-        @include md {
+        @include mixins.md {
             margin-bottom: 0;
         }
     }
@@ -29,13 +29,13 @@
         display: flex;
         gap: 10px;
         flex-direction: column;
-        @include md {
+        @include mixins.md {
             flex-direction: row;
         }
         .react-select-container {
             &.genresDD {
                 width: 100%;
-                @include md {
+                @include mixins.md {
                     max-width: 500px;
                     min-width: 250px;
                 }
@@ -43,7 +43,7 @@
             &.sortbyDD {
                 width: 100%;
                 flex-shrink: 0;
-                @include md {
+                @include mixins.md {
                     width: 250px;
                 }
             }
@@ -92,7 +92,7 @@
         gap: 10px;
         margin-bottom: 50px;
         justify-content: center;
-        @include md {
+        @include mixins.md {
             gap: 20px;
         }
         .movieCard {

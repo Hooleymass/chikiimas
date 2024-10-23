@@ -1,4 +1,4 @@
-@import "../../../../mixins.scss";
+@use "../../../../mixins.scss";
 
 .detailsBanner {
     width: 100%;
@@ -6,7 +6,7 @@
     padding-top: 100px;
     margin-bottom: 50px;
 
-    @include md {
+    @include mixins.md {
         margin-bottom: 0;
         padding-top: 120px;
         min-height: 700px;
@@ -51,7 +51,7 @@
         flex-direction: column;
         gap: 25px;
 
-        @include md {
+        @include mixins.md {
             gap: 50px;
             flex-direction: row;
         }
@@ -65,7 +65,7 @@
                 display: block;
                 border-radius: 12px;
 
-                @include md {
+                @include mixins.md {
                     max-width: 350px;
                 }
             }
@@ -92,7 +92,7 @@
                 svg {
                     width: 60px;
 
-                    @include md {
+                    @include mixins.md {
                         width: 80px;
                     }
                 }
@@ -149,7 +149,7 @@
                 font-size: 28px;
                 line-height: 40px;
 
-                @include md {
+                @include mixins.md {
                     font-size: 34px;
                     line-height: 44px;
                 }
@@ -162,7 +162,7 @@
                 font-style: italic;
                 opacity: 0.5;
 
-                @include md {
+                @include mixins.md {
                     font-size: 20px;
                     line-height: 28px;
                 }
@@ -184,7 +184,7 @@
                 .description {
                     line-height: 24px;
 
-                    @include md {
+                    @include mixins.md {
                         padding-right: 100px;
                     }
                 }
@@ -194,7 +194,7 @@
                 max-width: 70px;
                 background-color: var(--black2);
 
-                @include md {
+                @include mixins.md {
                     max-width: 90px;
                 }
 
@@ -212,7 +212,7 @@
                 svg {
                     width: 60px;
 
-                    @include md {
+                    @include mixins.md {
                         width: 80px;
                     }
                 }
@@ -294,7 +294,7 @@
         flex-direction: column;
         gap: 25px;
 
-        @include md {
+        @include mixins.md {
             gap: 50px;
             flex-direction: row;
         }
@@ -311,7 +311,7 @@
             border-radius: 12px;
             aspect-ratio: 1/1.5;
 
-            @include md {
+            @include mixins.md {
                 max-width: 350px;
             }
         }

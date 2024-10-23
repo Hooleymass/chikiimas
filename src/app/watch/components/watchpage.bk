@@ -15,16 +15,39 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
   const { data, loading } = useFetch(`/${mediaType}/${id}`);
 
   useEffect(() => {
-    let url = "";
+    let url;
     if (mediaType === "movie") {
-      url = `https://embed.su/embed/${mediaType}/${id}`;
+      url = `https://vidsrc.xyz/embed/${mediaType}/${id}`;
     } else if (mediaType === "tv" && season && episode) {
-      url = `https://embed.su/embed/${mediaType}/${id}/${season}/${episode}`;
+      url = `https://vidsrc.xyz/embed/${mediaType}/${id}/${season}/${episode}`;
     }
-    setEmbedUrl(url); // Update embedUrl state
+
+    // Fetch the embed page to extract the iframe src
+    if (url) {
+      fetch(url)
+        .then((response) => response.text())
+        .then((html) => {
+          // Create a DOM parser to parse the HTML
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+
+          // Extract the iframe src
+          const iframe = doc.querySelector('iframe');
+          if (iframe) {
+            setEmbedUrl(iframe.src);
+          } else {
+            console.error("Iframe not found.");
+          }
+        })
+        .catch((error) => {
+          console.error("Error fetching embed URL:", error);
+        });
+    }
   }, [mediaType, id, season, episode]);
 
   if (loading) return <Spinner initial={true} />;
+
+
 
   const renderSeasons = () => {
     if (!data?.number_of_seasons) return null;
@@ -59,12 +82,14 @@ const WatchPage = ({ mediaType, id, season = 1, episode = 1 }) => {
     );
   };
 
+
+
   return (
     <div className="watchPage">
       <ContentWrapper>
         <div className="videoContainer">
           <iframe
-            src={embedUrl} // Use embedUrl state here
+            src={embedUrl}
             title="Watch Video"
             frameBorder="0"
             allowFullScreen

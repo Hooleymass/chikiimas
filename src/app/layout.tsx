@@ -131,7 +131,7 @@ export default function RootLayout({
               <Analytics />
               <SocialBar />
               <SocialBarMe />
-              { /* <DirectLinkMe /> */}
+              <DirectLinkMe />
               <Header />
               <ScrollToTop>
                 {children}
