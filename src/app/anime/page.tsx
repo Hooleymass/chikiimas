@@ -1,4 +1,34 @@
+import { Metadata } from 'next';
 import React from 'react';
+
+export const metadata: Metadata = {
+  title: 'Anime World - Explore a New Universe of Anime Adventures',
+  description: 'Dive into the Anime World! Explore new anime series, characters, and universes. Stay tuned for exciting updates and epic adventures.',
+  keywords: ['anime', 'anime universe', 'watch anime', 'new anime', 'manga', 'otaku'],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://chikiimass.me/anime-world',
+    title: 'Anime World - Explore a New Universe of Anime Adventures',
+    description: 'A whole new anime universe is coming soon! Stay tuned for epic adventures.',
+    images: [
+      {
+        url: '/images/anime-world-banner.jpg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Anime World - Explore a New Universe of Anime Adventures',
+    description: 'A whole new anime universe is coming soon! Stay tuned for epic adventures.',
+    images: [
+      '/images/anime-world-banner.jpg',
+    ],
+  },
+};
 
 const Anime = () => {
   return (

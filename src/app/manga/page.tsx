@@ -1,4 +1,35 @@
+import { Metadata } from 'next';
 import React from 'react';
+
+
+export const metadata: Metadata = {
+  title: 'Manga Haven - Your Favorite Manga Collection',
+  description: 'Explore a vast collection of your favorite manga. Stay tuned for the latest updates and releases!',
+  keywords: ['manga', 'manga collection', 'read manga', 'manga updates', 'anime', 'otaku'],
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://chikiimass.me/manga-haven',
+    title: 'Manga Haven - Your Favorite Manga Collection',
+    description: 'Your favorite manga collection is coming soon! Get ready to explore the world of manga.',
+    images: [
+      {
+        url: '/images/manga-haven-banner.jpg',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Manga Haven - Your Favorite Manga Collection',
+    description: 'Explore a vast collection of your favorite manga. Stay tuned for the latest updates and releases!',
+    images: [
+      '/images/manga-haven-banner.jpg',
+    ],
+  },
+};
 
 const Manga = () => {
   return (

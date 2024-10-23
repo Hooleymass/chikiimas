@@ -2,7 +2,9 @@
 import { useEffect, useState } from "react";
 import { fetchDataFromApi } from "@/utils/api";
 
-const useLocal = navigator.language || 'en-US'
+const useLocal = () => {
+    return navigator.language || 'en-US'
+}
 const useFetch = (url: any) => {
 
     //3 states created , initial state of those null
@@ -15,7 +17,7 @@ const useFetch = (url: any) => {
         setData(null);
         setError(null);
 
-        fetchDataFromApi(`${url}?language=${useLocal}`)
+        fetchDataFromApi(`${url}?language=${useLocal()}`)
             .then((res) => {
                 setLoading(false);//after calling api, loading stop
                 setData(res);
