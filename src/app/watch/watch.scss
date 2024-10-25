@@ -1,9 +1,10 @@
+
 @use "../../mixins.scss";
 
 .main {
   display: flex;
   flex-direction: column;
-  padding-top: 30px;
+  padding-top: 80px;
 
   @include mixins.md {
     flex-direction: row;
@@ -14,25 +15,32 @@
   }
 
   .watchPage {
-    flex: 0 0 65%;
+    flex: 1;
+    width: 100%;
   }
 
   .sidebar {
-    flex: 0 0 35%;
-    margin-top: 40px;
+    flex: 1;
+    width: 100%;
+    margin-top: 20px;
 
+    @include mixins.md {
+      margin-top: 0;
+    }
   }
 }
+
 
 
 .watchPage {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 
   .videoContainer {
     width: 100%;
-    max-width: 1200px;
+    max-width: 100vw;
     aspect-ratio: 16 / 9;
     position: relative;
 
@@ -44,24 +52,72 @@
     }
   }
 
-  .sidebar {
-    justify-content: center;
+  .infoContainer {
+    width: 100%;
+    padding: 10px;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bolder;
+      margin-bottom: 5px;
+
+      @include mixins.md {
+        font-size: 2rem;
+      }
+    }
+
+    .overview {
+
+      margin-top: 5px;
+
+      @include mixins.md {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  @include mixins.md {
+    padding: 20px;
+
+.watchPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .videoContainer {
+    width: 100%;
+    max-width: 100vw;
+    aspect-ratio: 16 / 9;
+    position: relative;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      border: none;
+    }
   }
 
   .infoContainer {
     width: 100%;
-    max-width: 1200px;
     padding: 10px;
 
     .title {
-      font-size: 2rem;
-      font-weight: 200;
+      font-weight: bolder;
       margin-bottom: 5px;
+
+      @include mixins.md {
+        font-size: 2rem;
+      }
     }
 
     .overview {
-      font-size: 0.2rem;
-      line-height: 1.6;
+      margin-top: 5px;
+
+      @include mixins.md {
+        font-size: 1.2rem;
+      }
     }
   }
 
@@ -74,40 +130,18 @@
 
     .infoContainer {
       padding: 30px;
-
-      .title {
-        font-size: 2.5rem;
-      }
-
-      .overview {
-        font-size: 1.4rem;
-      }
-
-      .sidebar {
-        padding-top: 10px;
-      }
     }
   }
-
-  @include mixins.lg {
+}
     .videoContainer {
       margin-bottom: 20px;
     }
 
     .infoContainer {
-      padding: 10px;
-
-      .title {
-        font-size: 3rem;
-      }
-
-      .overview {
-        font-size: 1.6rem;
-      }
+      padding: 30px;
     }
   }
 }
-
 .season-container {
   margin: 20px 0;
 
