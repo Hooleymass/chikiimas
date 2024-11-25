@@ -21,7 +21,7 @@ const AppWrapper = ({ children }: { children: React.ReactNode }) => {
                 const url = {
                     backdrop: res.images.secure_base_url + 'original',
                     poster: res.images.secure_base_url + 'original',
-                    thumbnail: res.images.secure_base_url + 'w1920_and_h800_multi_faces',
+                    thumbnail: res.images.secure_base_url + 'w1280',
                     profile: res.images.secure_base_url + 'original',
                 };
                 dispatch(getApiConfiguration(url));
