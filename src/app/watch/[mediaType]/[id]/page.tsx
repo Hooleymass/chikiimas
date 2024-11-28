@@ -14,7 +14,6 @@ const Watch = async ({ params }: { params: any }) => {
 
 
   if (mediaType === 'tv') {
-    revalidatePath(`/watch/${mediaType}/${id}`);
     redirect(`/watch/tv/${id}/1/1`);
   }
 

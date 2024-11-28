@@ -31,7 +31,7 @@ export default Watch;
 
 
 export async function generateMetadata({ params }: { params: any }) {
-  const { mediaType, id, season, episode } = params;
+  const { mediaType, id, season, episode } = await params;
 
   // Fetch media details for dynamic metadata
   const data = await fetchMediaDetails(mediaType, id);
